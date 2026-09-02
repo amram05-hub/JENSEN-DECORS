@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,6 +20,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
+      
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
@@ -80,7 +81,7 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(135deg, rgba(14,12,10,0.85) 0%, rgba(30,26,22,0.6) 50%, rgba(14,12,10,0.9) 100%),
-        url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1600&auto=format&fit=crop') center/cover no-repeat;
+        url('round-wall-mirror.jpg') center/cover no-repeat;
     }
     .hero-content {
       position: relative; text-align: center; padding: 0 32px;
@@ -568,21 +569,21 @@
 <nav>
   <a class="logo" href="#" onclick="showPage('home')">J<span>ensen</span></a>
   <div class="nav-links">
-    <a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a>
+    <a href="#" onclick="showPage('home')" class="active" id="nav-home" data-page="home">Home</a>
     <div class="dropdown">
-      <a href="#" onclick="showPage('products')">Products ▾</a>
+      <a href="#" onclick="showPage('products')" data-page="products">Products ▾</a>
       <div class="dropdown-menu">
-        <a href="#" onclick="showPage('products'); filterCategory('metal')">Metal Wall Art</a>
-        <a href="#" onclick="showPage('products'); filterCategory('wallpaper')">Wall Papers</a>
-        <a href="#" onclick="showPage('products'); filterCategory('photo')">Photo Frame Art</a>
-        <a href="#" onclick="showPage('products'); filterCategory('mirror')">Mirror Art</a>
-        <a href="#" onclick="showPage('products'); filterCategory('shelves')">Wall Shelves</a>
-        <a href="#" onclick="showPage('products'); filterCategory('animals')">Wall Mounted Animals</a>
+        <a href="#" onclick="showPage('products'); filterCategory('metal', document.querySelector('#cat-filters [data-category=\'metal\']'))">Metal Wall Art</a>
+        <a href="#" onclick="showPage('products'); filterCategory('wallpaper', document.querySelector('#cat-filters [data-category=\'wallpaper\']'))">Wall Papers</a>
+        <a href="#" onclick="showPage('products'); filterCategory('photo', document.querySelector('#cat-filters [data-category=\'photo\']'))">Photo Frame Art</a>
+        <a href="#" onclick="showPage('products'); filterCategory('mirror', document.querySelector('#cat-filters [data-category=\'mirror\']'))">Mirror Art</a>
+        <a href="#" onclick="showPage('products'); filterCategory('shelves', document.querySelector('#cat-filters [data-category=\'shelves\']'))">Wall Shelves</a>
+        <a href="#" onclick="showPage('products'); filterCategory('animals', document.querySelector('#cat-filters [data-category=\'animals\']'))">Wall Mounted Animals</a>
       </div>
     </div>
-    <a href="#" onclick="showPage('brands')">Brands</a>
-    <a href="#" onclick="showPage('compare')">Compare</a>
-    <a href="#" onclick="showPage('contact')">Contact Us</a>
+    <a href="#" onclick="showPage('brands')" data-page="brands">Brands</a>
+    <a href="#" onclick="showPage('compare')" data-page="compare">Compare</a>
+    <a href="#" onclick="showPage('contact')" data-page="contact">Contact Us</a>
   </div>
 </nav>
 
@@ -596,7 +597,7 @@
       <div class="hero-eyebrow">Est. 2005 · Premium Wall Decor</div>
       <h1 class="hero-title">Transform Your<br><em>Living Space</em></h1>
       <p class="hero-sub">Curated wall decorative products from the world's finest brands — designed for every room, every style, every story.</p>
-      <a class="btn" href="1 detalis.docx" onclick="showPage('products')">Explore Collection</a>
+      <a class="btn" href="#" onclick="showPage('products')">Explore Collection</a>
     </div>
   </div>
 
@@ -624,42 +625,42 @@
     <h2 class="section-title">Browse by Category</h2>
     <div class="cat-grid">
       <div class="cat-card" onclick="showPage('products'); filterCategory('metal')">
-        <img src="1 image.jpg" alt="Metal Wall Art"/>
+        <img src="image-01.jpg" alt="Metal Wall Art"/>
         <div class="cat-card-overlay">
           <div class="cat-card-title">Metal Wall Art</div>
           <div class="cat-card-sub">Abstract · Geometric · Nature</div>
         </div>
       </div>
       <div class="cat-card" onclick="showPage('products'); filterCategory('wallpaper')">
-        <img src="3 image.webp" alt="Wallpapers"/>
+        <img src="image-03.webp" alt="Wallpapers"/>
         <div class="cat-card-overlay">
           <div class="cat-card-title">Wall Papers</div>
           <div class="cat-card-sub">Floral · Geometric · Textured</div>
         </div>
       </div>
       <div class="cat-card" onclick="showPage('products'); filterCategory('photo')">
-        <img src="12 image.webp" alt="Photo Frame Art"/>
+        <img src="image-05.webp" alt="Photo Frame Art"/>
         <div class="cat-card-overlay">
           <div class="cat-card-title">Photo Frame Art</div>
           <div class="cat-card-sub">Gallery Walls · Collage · Single</div>
         </div>
       </div>
       <div class="cat-card" onclick="showPage('products'); filterCategory('mirror')">
-        <img src="7 image.jpg" alt="Mirror Art"/>
+        <img src="image-07.jpg" alt="Mirror Art"/>
         <div class="cat-card-overlay">
           <div class="cat-card-title">Mirror Art</div>
           <div class="cat-card-sub">Round · Sunburst · Arched</div>
         </div>
       </div>
       <div class="cat-card" onclick="showPage('products'); filterCategory('shelves')">
-        <img src="8 image.webp" alt="Wall Shelves"/>
+        <img src="image-09.jpg" alt="Wall Shelves"/>
         <div class="cat-card-overlay">
           <div class="cat-card-title">Wall Shelves</div>
           <div class="cat-card-sub">Floating · Ladder · Geometric</div>
         </div>
       </div>
       <div class="cat-card" onclick="showPage('products'); filterCategory('animals')">
-        <img src="11 image.jpg" alt="Wall Mounted Animals"/>
+        <img src="image-11.jpg" alt="Wall Mounted Animals"/>
         <div class="cat-card-overlay">
           <div class="cat-card-title">Wall Mounted Animals</div>
           <div class="cat-card-sub">Deer · Elephant · Eagle</div>
@@ -812,22 +813,22 @@
     <h2 class="section-title">Our Products</h2>
 
     <div class="brand-filters" id="cat-filters" style="margin-bottom:16px;">
-      <button class="brand-btn active" onclick="filterCategory('all')">All</button>
-      <button class="brand-btn" onclick="filterCategory('metal')">Metal Wall Art</button>
-      <button class="brand-btn" onclick="filterCategory('wallpaper')">Wall Papers</button>
-      <button class="brand-btn" onclick="filterCategory('photo')">Photo Frame Art</button>
-      <button class="brand-btn" onclick="filterCategory('mirror')">Mirror Art</button>
-      <button class="brand-btn" onclick="filterCategory('shelves')">Wall Shelves</button>
-      <button class="brand-btn" onclick="filterCategory('animals')">Wall Mounted Animals</button>
+      <button class="brand-btn active" data-category="all" onclick="filterCategory('all', this)">All</button>
+      <button class="brand-btn" data-category="metal" onclick="filterCategory('metal', this)">Metal Wall Art</button>
+      <button class="brand-btn" data-category="wallpaper" onclick="filterCategory('wallpaper', this)">Wall Papers</button>
+      <button class="brand-btn" data-category="photo" onclick="filterCategory('photo', this)">Photo Frame Art</button>
+      <button class="brand-btn" data-category="mirror" onclick="filterCategory('mirror', this)">Mirror Art</button>
+      <button class="brand-btn" data-category="shelves" onclick="filterCategory('shelves', this)">Wall Shelves</button>
+      <button class="brand-btn" data-category="animals" onclick="filterCategory('animals', this)">Wall Mounted Animals</button>
     </div>
 
     <div class="brand-filters" id="brand-filters">
-      <button class="brand-btn active" onclick="filterBrand('all')">All Brands</button>
-      <button class="brand-btn" onclick="filterBrand('Gloster')">Gloster</button>
-      <button class="brand-btn" onclick="filterBrand('Artcraft')">Artcraft</button>
-      <button class="brand-btn" onclick="filterBrand('Nova Decor')">Nova Decor</button>
-      <button class="brand-btn" onclick="filterBrand('WallMuse')">WallMuse</button>
-      <button class="brand-btn" onclick="filterBrand('Luxewall')">Luxewall</button>
+      <button class="brand-btn active" data-brand="all" onclick="filterBrand('all', this)">All Brands</button>
+      <button class="brand-btn" data-brand="Gloster" onclick="filterBrand('Gloster', this)">Gloster</button>
+      <button class="brand-btn" data-brand="Artcraft" onclick="filterBrand('Artcraft', this)">Artcraft</button>
+      <button class="brand-btn" data-brand="Nova Decor" onclick="filterBrand('Nova Decor', this)">Nova Decor</button>
+      <button class="brand-btn" data-brand="WallMuse" onclick="filterBrand('WallMuse', this)">WallMuse</button>
+      <button class="brand-btn" data-brand="Luxewall" onclick="filterBrand('Luxewall', this)">Luxewall</button>
     </div>
 
     <div class="products-grid" id="products-grid"></div>
@@ -921,18 +922,18 @@
 <script>
 // ─── DATA ───────────────────────────────────────────
 const products = [
-  { id:1, name:"Cascading Branches", brand:"Gloster", category:"metal", price:"$189", img:"1 image.jpg", desc:"Intricate iron branches finished in antique bronze for a timeless natural look.", material:"Cast Iron", size:"90×60cm", weight:"4.2kg", style:"Nature", rating:"4.8", sold:312 },
-  { id:2, name:"Abstract Spiral", brand:"Gloster", category:"metal", price:"$220", img:"2 image.jpg", desc:"A bold abstract spiral crafted from stainless steel with a matte black finish.", material:"Stainless Steel", size:"75×75cm", weight:"3.8kg", style:"Abstract", rating:"4.6", sold:210 },
-  { id:3, name:"Botanical Bloom", brand:"Artcraft", category:"wallpaper", price:"$65/roll", img:"3 image.webp", desc:"Lush botanical pattern in muted sage and earth tones for a calming atmosphere.", material:"Vinyl Coated", size:"Standard Roll", weight:"0.8kg", style:"Floral", rating:"4.9", sold:540 },
-  { id:4, name:"Geo Diamond Grid", brand:"Nova Decor", category:"wallpaper", price:"$55/roll", img:"4 image.jpg", desc:"Modern geometric diamond pattern in monochrome tones for a chic contemporary look.", material:"Peel & Stick", size:"Standard Roll", weight:"0.6kg", style:"Geometric", rating:"4.5", sold:188 },
-  { id:5, name:"Vintage Gallery Wall", brand:"WallMuse", category:"photo", price:"$145", img:"5 image.webp", desc:"A curated set of 6 mismatched vintage-style frames for an eclectic gallery display.", material:"MDF + Glass", size:"Mixed", weight:"5.5kg", style:"Gallery", rating:"4.7", sold:278 },
-  { id:6, name:"Nordic Arch Mirror", brand:"Luxewall", category:"mirror", price:"$310", img:"6 image.avif", desc:"Tall arched mirror with an oak-veneer frame, bringing Scandinavian warmth to any room.", material:"Oak Veneer + Glass", size:"50×160cm", weight:"9kg", style:"Nordic", rating:"4.9", sold:401 },
-  { id:7, name:"Sunburst Gold Mirror", brand:"Gloster", category:"mirror", price:"$275", img:"7 image.jpg", desc:"Iconic sunburst design in gleaming gold — a statement piece for entryways and living rooms.", material:"Resin + Gold Foil", size:"Ø 80cm", weight:"3.2kg", style:"Sunburst", rating:"4.8", sold:355 },
-  { id:8, name:"Floating Hex Shelf", brand:"Nova Decor", category:"shelves", price:"$99", img:"8 image.webp", desc:"Modular hexagonal floating shelves in walnut veneer — arrange in any configuration.", material:"Walnut Veneer", size:"30×30cm each", weight:"1.8kg", style:"Geometric", rating:"4.6", sold:223 },
-  { id:9, name:"Rustic Ladder Shelf", brand:"Artcraft", category:"shelves", price:"$160", img:"9 image.jpg", desc:"A three-tier ladder shelf in reclaimed pine with iron brackets for an industrial chic vibe.", material:"Reclaimed Pine", size:"40×120cm", weight:"7kg", style:"Rustic", rating:"4.5", sold:149 },
-  { id:10, name:"Stag Head Sculpture", brand:"WallMuse", category:"animals", price:"$195", img:"10 image.webp", desc:"Striking resin stag head in charcoal finish — the quintessential statement piece for bold interiors.", material:"Resin", size:"35×45cm", weight:"2.1kg", style:"Taxidermy Art", rating:"4.7", sold:194 },
-  { id:11, name:"Eagle Wingspan", brand:"Luxewall", category:"animals", price:"$240", img:"11 image.jpg", desc:"Majestic eagle in full wingspan pose, hand-painted in metallic copper and grey tones.", material:"Polyresin", size:"80×40cm", weight:"3.5kg", style:"Naturalist", rating:"4.8", sold:267 },
-  { id:12, name:"Collage Frame Set", brand:"Artcraft", category:"photo", price:"$110", img:"12 image.webp", desc:"A 9-piece collage frame set for a personal wall story — clean white frames with real glass.", material:"MDF + Glass", size:"Mixed", weight:"4.0kg", style:"Collage", rating:"4.6", sold:310 },
+  { id:1, name:"Cascading Branches", brand:"Gloster", category:"metal", price:"$189", img:"image-01.jpg", desc:"Intricate iron branches finished in antique bronze for a timeless natural look.", material:"Cast Iron", size:"90×60cm", weight:"4.2kg", style:"Nature", rating:"4.8", sold:312 },
+  { id:2, name:"Abstract Spiral", brand:"Gloster", category:"metal", price:"$220", img:"image-02.jpg", desc:"A bold abstract spiral crafted from stainless steel with a matte black finish.", material:"Stainless Steel", size:"75×75cm", weight:"3.8kg", style:"Abstract", rating:"4.6", sold:210 },
+  { id:3, name:"Botanical Bloom", brand:"Artcraft", category:"wallpaper", price:"$65/roll", img:"image-03.webp", desc:"Lush botanical pattern in muted sage and earth tones for a calming atmosphere.", material:"Vinyl Coated", size:"Standard Roll", weight:"0.8kg", style:"Floral", rating:"4.9", sold:540 },
+  { id:4, name:"Geo Diamond Grid", brand:"Nova Decor", category:"wallpaper", price:"$55/roll", img:"image-04.webp", desc:"Modern geometric diamond pattern in monochrome tones for a chic contemporary look.", material:"Peel & Stick", size:"Standard Roll", weight:"0.6kg", style:"Geometric", rating:"4.5", sold:188 },
+  { id:5, name:"Vintage Gallery Wall", brand:"WallMuse", category:"photo", price:"$145", img:"image-05.webp", desc:"A curated set of 6 mismatched vintage-style frames for an eclectic gallery display.", material:"MDF + Glass", size:"Mixed", weight:"5.5kg", style:"Gallery", rating:"4.7", sold:278 },
+  { id:6, name:"Nordic Arch Mirror", brand:"Luxewall", category:"mirror", price:"$310", img:"image-06.avif", desc:"Tall arched mirror with an oak-veneer frame, bringing Scandinavian warmth to any room.", material:"Oak Veneer + Glass", size:"50×160cm", weight:"9kg", style:"Nordic", rating:"4.9", sold:401 },
+  { id:7, name:"Sunburst Gold Mirror", brand:"Gloster", category:"mirror", price:"$275", img:"image-07.jpg", desc:"Iconic sunburst design in gleaming gold — a statement piece for entryways and living rooms.", material:"Resin + Gold Foil", size:"Ø 80cm", weight:"3.2kg", style:"Sunburst", rating:"4.8", sold:355 },
+  { id:8, name:"Floating Hex Shelf", brand:"Nova Decor", category:"shelves", price:"$99", img:"image-08.avif", desc:"Modular hexagonal floating shelves in walnut veneer — arrange in any configuration.", material:"Walnut Veneer", size:"30×30cm each", weight:"1.8kg", style:"Geometric", rating:"4.6", sold:223 },
+  { id:9, name:"Rustic Ladder Shelf", brand:"Artcraft", category:"shelves", price:"$160", img:"image-09.jpg", desc:"A three-tier ladder shelf in reclaimed pine with iron brackets for an industrial chic vibe.", material:"Reclaimed Pine", size:"40×120cm", weight:"7kg", style:"Rustic", rating:"4.5", sold:149 },
+  { id:10, name:"Stag Head Sculpture", brand:"WallMuse", category:"animals", price:"$195", img:"image-10.webp", desc:"Striking resin stag head in charcoal finish — the quintessential statement piece for bold interiors.", material:"Resin", size:"35×45cm", weight:"2.1kg", style:"Taxidermy Art", rating:"4.7", sold:194 },
+  { id:11, name:"Eagle Wingspan", brand:"Luxewall", category:"animals", price:"$240", img:"image-11.jpg", desc:"Majestic eagle in full wingspan pose, hand-painted in metallic copper and grey tones.", material:"Polyresin", size:"80×40cm", weight:"3.5kg", style:"Naturalist", rating:"4.8", sold:267 },
+  { id:12, name:"Collage Frame Set", brand:"Artcraft", category:"photo", price:"$110", img:"image-12.webp", desc:"A 9-piece collage frame set for a personal wall story — clean white frames with real glass.", material:"MDF + Glass", size:"Mixed", weight:"4.0kg", style:"Collage", rating:"4.6", sold:310 },
 ];
 
 const brandDescriptions = {
@@ -960,9 +961,16 @@ let compareList = [];
 
 // ─── PAGE NAVIGATION ─────────────────────────────────
 function showPage(id) {
+  const page = document.getElementById('page-' + id);
+  if (!page) return;
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  page.classList.add('active');
+
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === id);
+  });
+
   if (id === 'home') renderHomeSections();
   if (id === 'products') renderProducts();
   if (id === 'brands') { showBrandProducts('all'); }
@@ -1033,17 +1041,23 @@ function renderProducts() {
   grid.innerHTML = filtered.map(productCard).join('');
 }
 
-function filterCategory(cat) {
+function filterCategory(cat, trigger = null) {
   currentCategory = cat;
-  document.querySelectorAll('#cat-filters .brand-btn').forEach(b => b.classList.remove('active'));
-  if (event && event.target) event.target.classList.add('active');
+  const buttons = document.querySelectorAll('#cat-filters .brand-btn');
+  buttons.forEach((button) => {
+    const isActive = trigger ? button === trigger : button.dataset.category === cat;
+    button.classList.toggle('active', isActive);
+  });
   renderProducts();
 }
 
-function filterBrand(brand) {
+function filterBrand(brand, trigger = null) {
   currentBrand = brand;
-  document.querySelectorAll('#brand-filters .brand-btn').forEach(b => b.classList.remove('active'));
-  if (event && event.target) event.target.classList.add('active');
+  const buttons = document.querySelectorAll('#brand-filters .brand-btn');
+  buttons.forEach((button) => {
+    const isActive = trigger ? button === trigger : button.dataset.brand === brand;
+    button.classList.toggle('active', isActive);
+  });
   renderProducts();
 }
 
@@ -1113,6 +1127,10 @@ function clearCompare() {
   compareList = [];
   updateCompareBar();
   document.querySelectorAll('.btn-compare').forEach(b => { b.classList.remove('selected'); b.textContent = '+ Compare'; });
+  const comparePage = document.getElementById('page-compare');
+  if (comparePage && comparePage.classList.contains('active')) {
+    buildCompareTable();
+  }
 }
 
 function buildCompareTable() {
@@ -1188,6 +1206,13 @@ function initMap() {
     geoStatus.textContent = `📍 Showing company location.`;
   }
 }
+
+document.addEventListener('click', (event) => {
+  const anchor = event.target.closest('a[href="#"]');
+  if (anchor) {
+    event.preventDefault();
+  }
+});
 
 // ─── INIT ─────────────────────────────────────────────
 renderProducts();
